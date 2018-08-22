@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCUTest", "BCUTest\BCUTest.csproj", "{9F17B0F8-51B0-4310-B427-24FDA4B3F21D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F17B0F8-51B0-4310-B427-24FDA4B3F21D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F17B0F8-51B0-4310-B427-24FDA4B3F21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F17B0F8-51B0-4310-B427-24FDA4B3F21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F17B0F8-51B0-4310-B427-24FDA4B3F21D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87A86A1B-67B0-4E3B-BF6D-531AE5E2D5CE}
+	EndGlobalSection
+EndGlobal
