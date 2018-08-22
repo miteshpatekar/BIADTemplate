@@ -14,6 +14,7 @@ namespace BCUTest.Dialogs
                 ConfigurationManager.AppSettings["QnAHost"],
                 ConfigurationManager.AppSettings["QnAKnowledgebaseId"],
                 ConfigurationManager.AppSettings["QnAEndPointKey"]);
+
         public Task StartAsync(IDialogContext context)
         {
             context.Wait(MessageReceivedASync);
@@ -22,8 +23,8 @@ namespace BCUTest.Dialogs
 
         public async Task MessageReceivedASync(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
-            string safeText = HttpUtility.UrlEncode(((IMessageActivity)context.Activity).Text);
-            string answer = _QnAService.GetAnswer(safeText);
+            var activity = context.Activity as IMessageActivity;
+            string answer = _QnAService.GetAnswer(activity.Text);
             context.Done(answer);
         }
     }

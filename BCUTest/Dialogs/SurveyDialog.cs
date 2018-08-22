@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Bot.Builder.FormFlow;
 
-namespace BCUTest
+namespace BCUTest.Dialogs
 {
     public enum DepartmentOptions
     {

@@ -22,6 +22,7 @@ namespace BCUTest.Dialogs
 
         public string GetIntent(string query)
         {
+            // call the restapi
             var client = new RestClient(luisServiceHostName + "/luis/v2.0/apps/" + luisId +
                 "?subscription-key="+luisKey+ "&staging=true&q="+query);
             var request = new RestRequest(Method.GET);
@@ -42,14 +43,13 @@ namespace BCUTest.Dialogs
     }
 
 
+    // LUIS get Intent models
     public class LuisAnswer
     {
         public string query { get; set; }
         public TopScoringIntent topScoringIntent { get; set; }
-
         public IList<Entities> entities { get; set; }
-        public SentimentAnalysis sentimentAnalysis { get; set; }
-        
+        public SentimentAnalysis sentimentAnalysis { get; set; }       
     }
 
     public class TopScoringIntent

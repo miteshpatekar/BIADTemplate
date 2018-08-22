@@ -6,9 +6,6 @@ using System.Linq;
 
 namespace BCUTest.Dialogs
 {
-    /// <summary>
-    /// QnAMakerService is a wrapper over the QnA Maker REST endpoint
-    /// </summary>
     [Serializable]
     public class QnAMakerService
     {
@@ -16,12 +13,6 @@ namespace BCUTest.Dialogs
         private string knowledgeBaseId;
         private string endpointKey;
 
-        /// <summary>
-        /// Initialize a particular endpoint with it's details
-        /// </summary>
-        /// <param name="hostName">Hostname of the endpoint</param>
-        /// <param name="kbId">Knowledge base ID</param>
-        /// <param name="ek">Endpoint Key</param>
         public QnAMakerService(string hostName, string kbId, string ek)
         {
             qnaServiceHostName = hostName;
@@ -29,11 +20,6 @@ namespace BCUTest.Dialogs
             endpointKey = ek;
         }
 
-        /// <summary>
-        /// Call the QnA Maker endpoint and get a response
-        /// </summary>
-        /// <param name="query">User question</param>
-        /// <returns></returns>
         public string GetAnswer(string query, float tolerance = 50)
         {
             var client = new RestClient(qnaServiceHostName + "/knowledgebases/" + knowledgeBaseId + "/generateAnswer");
@@ -67,7 +53,7 @@ namespace BCUTest.Dialogs
         }
     }
 
-    /* START - QnA Maker Response Class */
+    /*  QnA Maker Response Class */
     public class Metadata
     {
         public string name { get; set; }
@@ -89,5 +75,5 @@ namespace BCUTest.Dialogs
     {
         public IList<Answer> answers { get; set; }
     }
-    /* END - QnA Maker Response Class */
+    /* QnA Maker Response Class */
 }

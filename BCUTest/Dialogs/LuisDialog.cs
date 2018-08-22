@@ -10,10 +10,12 @@ namespace BCUTest.Dialogs
     [Serializable]
     public class LuisDialog : IDialog<object>
     {
+        //load the LUIS service
         private LuisService _luisService = new LuisService(
                 ConfigurationManager.AppSettings["LuisAPIHostName"],
                 ConfigurationManager.AppSettings["LuisAppId"],
                 ConfigurationManager.AppSettings["LuisAPIKey"]);
+
         public Task StartAsync(IDialogContext context)
         {
             context.Wait(MessageReceivedASync);
@@ -22,8 +24,8 @@ namespace BCUTest.Dialogs
 
         public async Task MessageReceivedASync(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
-            string safeText = HttpUtility.UrlEncode(((IMessageActivity)context.Activity).Text);
-            string answer = _luisService.GetIntent(safeText);
+            var activity = context.Activity as IMessageActivity;
+            string answer = _luisService.GetIntent(activity.Text);
             context.Done(answer);
         }
     }
